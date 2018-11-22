@@ -1,0 +1,11 @@
+NQueens || Sloan Liu || slyliu
+
+Files Included:
+NQueens.java
+README
+Makefile
+
+
+~ Followed flow chart, but added an extra branch for when the recursive call returns a false. 
+When that happens, we reset the already placed queen to null and move it to keep checking for hits. 
+If this fails, we return false, to set recursion back to previous iteration. 

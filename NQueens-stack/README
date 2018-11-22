@@ -1,0 +1,15 @@
+Sloan Liu || NQueens Stack implementation || slyliu
+
+Strategy:
+1. I first learned how to use the Stack class Java comes with
+2. I then  modified the main function to place more than one pre-set Queen in the Queen array
+3. Algorithm for NQueens method:
+	~ Push the pre-set Queens to the Stack
+	~ While the Stack is not empty:
+	  - pop the top of the Stack
+	  - Check for BASE CASE
+	  		if statisfied, then return TRUE
+	  - find an empty column
+	  - push all possible Queen placements to the stack
+	  		move the Queen is the placement is not valid
+	  		If the placement is valid, push possibility to the stack and move the Queen

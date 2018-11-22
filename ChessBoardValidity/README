@@ -1,0 +1,14 @@
+Sloan Liu || slyliu
+
+Assignment:
+~ Create a chess board uaing a LinkedList and fill it pieces as Nodes
+~ Check for the Validity of the board:
+  - Making sure not two pieces occupy the same spot
+~ Check for the existence of a specified piece given its location on the board
+~ Checking if specified piece attacks any other piece on the board
+
+General Startegy:
+~ Implemet all classes that relate to idividual pieces
+~ Implement Linked List class
+~ Implement main ChessBoard class
+~ Write algorithm to correctly parse the input file

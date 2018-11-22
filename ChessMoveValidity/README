@@ -1,0 +1,55 @@
+Sloan Liu || slyliu
+
+Design Overview:
+1) Implement and test all ChessPiece related functions:
+    ~ Functions:
+        - Constructor(int col, int row, int color)
+        - boolean IsAttacking(ChessPiece other)
+        - boolean MoveTo(int col, int row, Pieces board)
+        - int[] GetPath(int c1, int r1)
+    ~ Classes:
+        - ChessPiece
+        - Queen
+        - King
+        - Rook
+        - Bishop
+        - Knight
+        - Pawn
+
+3) I then added these functions to the LinkedList class: 
+    ~ ChessPiece Delete(int col, int row)
+        - Delete the desired piece
+    ~ boolean GetKings()
+        - Get the two kings from a board
+
+2) Then I designed the main class: ChessMoves along with the main function
+    ~ main() breakdown:
+    FOR EVERY LINE IN THE INPUT FILE:
+        - First fill up the board with all the Pieces provided
+            > We can detect when the board ends with the ":" character
+            > Check for board validity
+                > If board is invalid, then ILLEGAL
+                > If not, move on
+        - After the detection, I start checking for valid moves:
+            Algorithm:
+            > Is there is a piece at (x,y)?
+                > If not, then ILLEGAL
+                > If there is, move on to next step
+            > Is there anything blocking path from (x,y) to (x',y')?
+                > If yes, then ILLEGAL
+                > If not, then move on to next step
+            > Is there a piece at (x',y')?
+                > If not, then move the piece
+                    > If kings are not safe after move, ILLEGAL
+                    > If kings are safe, move on to next step
+                > If there is, check for IsAttacking
+                    > If attack is not valid, ILLEGAL
+                    > If attck is valid, delete piece at (x',y'), move piece
+                        > If kings are not safe after move, ILLEGAL
+                        > If kings are safe, move on to next step
+                        
+
+*) Have special cases in the main algorithm for Pawns when detecting a move
+    > If the Pawn is not attacking anyone, then it can only move forward
+
+*) On the last move, both kings have to safe, otherwise move is ILLEGAL
